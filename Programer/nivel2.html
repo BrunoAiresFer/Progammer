@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programer-Nível 2</title>
+    <link rel="icon" type="image/png" href="logo.jpg">
+    <link rel="stylesheet" href="/Programer/css/index.css">
+    <link rel="stylesheet" href="/Programer/css/niveis.css">
+</head>
+
+<body>
+    <main>
+        <section id="game-board">
+            <img src="imagens/nivel2/fundo_nivel2.png" alt="Cenário Nível 2" id="camada1">
+            <img src="imagens/geral/personagem_v1.png" alt="Personagem" id="personagem">
+            <img src="imagens/nivel2/vilao_parado.png" alt="Vilão" id="vilao">
+            <img src="imagens/geral/moto.png" alt="Moto" id="moto">
+        </section>
+
+        <section id="editor">
+            <article>
+                <h1>Destrua o Vírus</h1>
+                <p>Um inimigo está bloqueando sua passagem, você vai precisar da sua moto para passar por ele. Entretanto, ela está infectada com um vírus. Complete o código que está aumentando o poder do programa "moto" sobre o "vírus" para concluir o nível.</p>
+            </article>
+
+            <section id="codigo">
+                <ol>
+                    <li>
+                        <p><span>import matplotlib.pyplot as plt</span></p>
+                    </li>
+                    <li>
+                        <p><span>programas = </span><input type="text" id="primeiralinha" placeholder="está entre parênteses"></p>
+                    </li>
+                    <li>
+                        <p><span>poder = [117, 58.5]</span></p>
+                    </li>
+                    <li>
+                        <p><span>plt.pie(poder, labels=programas,</span><input type="text" id="quartalinha" placeholder="...decimal e no ângulo de 90 graus"></p>
+                    </li>
+                    <li>
+                        <p><span>plt.title('Hackeando')</span></p>
+                    </li>
+                    <li>
+                        <p><span>plt.show()</span></p>
+                    </li>
+                </ol>
+            </section>
+
+            <div id="botaoeditor">
+                <button onclick="verificar()" id="executar">Executar</button>
+                <button onclick="goToMenu()" id="menu">Voltar para o Menu</button>
+                <button onclick="nextlevel()" id="next_level">Prosseguir</button><br>
+                <p id="mensagem"></p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <!-- Adicione informações de rodapé, se necessário -->
+    </footer>
+
+    <script>
+        function verificar() {
+            // Código de verificação...
+        }
+
+        function goToMenu() {
+            window.location.href = 'index.html';
+        }
+
+        function nextlevel() {
+            window.location.href = 'nivel3.html';
+        }
+    </script>
+</body>
+
+</html>

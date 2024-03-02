@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programer-Nível1</title>
+    <link rel="icon" type="image/png" href="logo.jpg">
+    <link rel="stylesheet" href="/Programer/css/index.css">
+    <link rel="stylesheet" href="/Programer/css/niveis.css">
+</head>
+
+
+<body>
+
+    <div id="game-board">
+    <img src="imagens/nivel1/fundo_nivel1.png" id="camada1">
+    <img src="imagens/nivel1/predios.png" id="camada2">
+    <img src="imagens/nivel1/plataformas.png" id="plataformas">
+    <img src="imagens/geral/personagem_v1.png" id="personagem">
+    <img src="imagens/geral/moto.png" id="moto">
+    </div>
+    <!-- <img src="imagens/nivel1/grafico_nivel1.png" id="grafico"> -->
+
+    <div id="editor">
+        <div id="objetivo">
+            <h1>Ajude o herói a chegar na moto</h1>
+            <p>O herói precisa da sua ajuda para chegar até o outro edifício, para isso voce pode programar uma escada
+                em python para ajuda-lo a concluir o objetivo!</p>
+        </div>
+        <div id="codigo">
+            <div id="csscodigo">
+                <ol>
+                    <li>
+                        <p><span>import</span></p>
+                        <input type="text" id="primeiralinha" placeholder="primordial para fazer gráfico">
+                    </li>
+
+                    <li>
+                        <p><span>plataforma = ["plataforma1", "plataforma2", "plataforma4", "plataforma5",
+                                "plataforma5", "plataforma6"]</span></p>
+                    </li>
+
+                    <li>
+                        <input type="text" id="terceiralinha" placeholder="segunda coluna">
+                        <p><span>= [34, 68, 102, 136, 170, 204]</span></p>
+                    </li>
+
+                    <li>
+                        <p><span>plt.</span></p>
+                        <input type="text" id="quartalinha" placeholder="usado para plotar as colunas">
+                        <p><span>(plataforma, altura)</span></p>
+                    </li>
+
+                    <li>
+                        <p><span>plt.title('Escada')</span></p>
+                    </li>
+
+                    <li>
+                        <p><span>plt.show()</span></p>
+                    </li>
+                </ol>
+            </div>
+
+        </div>
+
+        <div id="botaoeditor">
+            <button onclick="verificar()" id="executar">Executar</button>
+            <button onclick="goToMenu()" id="menu">Voltar para o Menu</button>
+            <button onclick="nextlevel()" id="next_level">Prosseguir</button><br>
+            <p id="mensagem"></p>
+        </div>
+
+
+
+        <script>
+            function verificar() {
+                var respostaPrimeiraLinha = document.getElementById('primeiralinha').value.trim().toLowerCase().replace(/\s/g, '');
+                var respostaTerceiraLinha = document.getElementById('terceiralinha').value.trim().toLowerCase().replace(/\s/g, '');
+                var respostaQuartaLinha = document.getElementById('quartalinha').value.trim().toLowerCase().replace(/\s/g, '');
+
+                var respostaCorretaPrimeiraLinha = "matplotlib.pyplot as plt".toLowerCase().replace(/\s/g, '');
+                var respostaCorretaTerceiraLinha = "altura".toLowerCase().replace(/\s/g, '');
+                var respostaCorretaQuartaLinha = "bar".toLowerCase().replace(/\s/g, '');
+
+                if (
+                    respostaPrimeiraLinha === respostaCorretaPrimeiraLinha &&
+                    respostaTerceiraLinha === respostaCorretaTerceiraLinha &&
+                    respostaQuartaLinha === respostaCorretaQuartaLinha
+                ) {
+                    document.getElementById('mensagem').innerHTML = 'Parabéns! Suas respostas estão corretas.';
+                    document.getElementById('mensagem').style.color = 'green';
+                    document.getElementById('plataformas').style.display ='block';
+                    document.getElementById('plataformas').style.animation ='plataformas 2000ms';
+                    //Fazendo o botão prosseguir aparecer e o outro desaparecer
+                    document.getElementById('next_level').style.display = 'inline';
+                } else {
+                    document.getElementById('mensagem').innerHTML = 'Tente novamente. Suas respostas estão incorretas.';
+                    document.getElementById('mensagem').style.color = 'red';
+                    document.getElementById('plataformas').style.display = 'none';
+                }
+            }
+
+
+
+            function goToMenu() {
+                window.location.href = 'index.html';
+            }
+            function nextlevel(){
+                window.location.href ='nivel2.html';
+            }
+        </script>
+</body>
+</html>

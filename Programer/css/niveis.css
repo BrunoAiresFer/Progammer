@@ -1,0 +1,289 @@
+body {
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    background-color: #030000;
+}
+
+#inicial {
+    width: 800px;
+    height: 800px;
+    position: absolute;
+    margin-left: 5px;
+    top: 175px;
+    z-index: 1;
+}
+
+#final {
+    width: 800px;
+    height: 800px;
+    position: absolute;
+    margin-left: 5px;
+    top: 175px;
+    z-index: 2;
+}
+
+#teladefundo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+#editor {
+    background-color: rgb(90, 112, 137);
+    width: 45%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 7;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 10px;
+    font-size: 14px;
+    line-height: 1.5;
+
+}
+
+#editor,
+p {
+    display: inline;
+    margin: 0.5px;
+    font-family: "Roboto", sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+    ;
+}
+
+#primeiralinha,
+#terceiralinha,
+#quartalinha {
+    background-color: rgb(101, 116, 143);
+    border-radius: 5px;
+    /* Adiciona bordas arredondadas */
+    cursor: pointer;
+    /* Altera o cursor para o ponteiro */
+    box-shadow: none;
+    /* Remove a sombra */
+    outline: none;
+    /* Remove o contorno ao focar */
+
+}
+
+#primeiralinha::placeholder,
+#terceiralinha::placeholder,
+#quartalinha::placeholder {
+    color: #999;
+    /* Cor do texto do placeholder */
+}
+
+
+
+.botoes p {
+    height: 1.9em;
+    /* Defina uma altura fixa para o elemento <p> que contém a mensagem */
+    position: fixed;
+}
+
+#codigo {
+    margin-bottom: 15%;
+    margin-top: 2%;
+    background-color: rgb(49, 66, 86);
+    border-radius: 5px;
+    position: absolute;
+    bottom: 40%;
+}
+
+#csscodigo {
+    margin: 5px;
+    /* Adicione a margem desejada */
+    padding: 5px;
+    /* Opcional: adicione preenchimento interno para separar ainda mais o conteúdo da borda */
+
+}
+
+#csscodigo input {
+    border: none;
+    box-shadow: none;
+    outline: none;
+}
+
+
+ol {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    margin-left: 1.9%;
+}
+
+#grafico{
+    width: 73% !important;
+}
+#botaoeditor {
+position: fixed;
+text-align: center; /* Centraliza os botões horizontalmente */
+bottom: 20px;
+left: 0;
+width: 150%;
+padding: 10px; /* Espaçamento interno para os botões */
+
+}
+/* css dos botões de intereação do usuario */
+#botaoeditor button
+{
+text-decoration: none;
+border: 2px solid #19003E;
+padding: 10px 30px;
+font-size: 16px;
+color: #030000;
+background-color: transparent;
+cursor: pointer;
+border-radius: 10px;
+transition: background-color 0.3s ease, border 0.3s ease;
+
+}
+#botaoeditor button:hover {
+background-color: #19003E;
+border: 2px solid #fff;
+color: #fff;
+}
+
+#botaoeditor button a {
+text-decoration: none;
+color: #fff;
+}
+/* CSS do botão de prosseguir*/
+#next_level
+{
+display:none;
+}
+/* css das imagens*/
+#camada1
+{
+position: absolute;
+image-rendering: pixelated;
+width: 100%;
+height: 100%;
+}
+#camada2
+{
+position: absolute;
+image-rendering: pixelated;
+width: 50%;
+height: 50%;
+bottom: 0%;
+}
+
+/* CSS NIVEL 1 */
+#plataformas
+{
+position: absolute;
+image-rendering: pixelated;
+width: 20%;
+height: 20%;
+bottom: 15%;
+left: 15%;
+display: none;
+}
+/* animação das plataformas */
+
+@keyframes plataformas{
+from{bottom:-10%;}
+to{bottom: 15%;}
+}
+
+#personagem
+{
+position: absolute;
+image-rendering: pixelated;
+width: 7%;
+height: 15%;
+bottom: 21%;
+}
+#moto
+{
+position: absolute;
+image-rendering: pixelated;
+bottom: 35%;
+left: 36%;
+width: 10%;
+height: 10%;
+}
+#grafico
+{
+position: absolute;
+
+}
+
+/* FIM CSS NIVEL 1 */
+
+
+/* CSS NIVEL 2 */
+#personagem
+{
+position: absolute;
+image-rendering: pixelated;
+width: 7%;
+height: 15%;
+bottom: 20%;
+}
+#vilao
+{
+position: absolute;
+image-rendering: pixelated;
+width: 9%;
+height: 15%;
+bottom: 20%;
+left: 40%;
+}
+#moto
+{
+position: absolute;
+image-rendering: pixelated;
+bottom: 8%;
+left: -15%;
+width: 10%;
+height: 10%;
+/* animation: moto_animation 2s infinite; */
+}
+/* Moto animação*/
+@keyframes moto_animation{
+from
+{
+bottom: 8%;
+left: -15%;
+}
+to
+{
+bottom: 27%;
+left: 60%;
+}
+}
+
+#grafico
+{
+position: absolute;
+
+}
+
+/* FIM CSS NIVEL 2 */
+
+/*  CSS NIVEL 3 */
+
+
+/* css das imagens*/
+#camada1
+{
+position: absolute;
+image-rendering: pixelated;
+width: 53.5%;
+height: 100%;/* altura*/
+}
+
+/* FIM NIVEL 3 */
+

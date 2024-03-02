@@ -1,0 +1,40 @@
+/* CSS NIVEL 1 */
+#plataformas
+{
+position: absolute;
+image-rendering: pixelated;
+width: 20%;
+height: 20%;
+bottom: 15%;
+left: 15%;
+display: none;
+}
+/* animação das plataformas */
+
+@keyframes plataformas{
+from{bottom:-10%;}
+to{bottom: 15%;}
+}
+
+#personagem
+{
+position: absolute;
+image-rendering: pixelated;
+width: 7%;
+height: 15%;
+bottom: 21%;
+}
+#moto
+{
+position: absolute;
+image-rendering: pixelated;
+bottom: 35%;
+left: 36%;
+width: 10%;
+height: 10%;
+}
+#grafico
+{
+position: absolute;
+
+}
