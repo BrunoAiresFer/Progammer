@@ -1,135 +1,244 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Programer</title>
-    <link rel="stylesheet" href="/Programer/css/index.css">
-    <link rel="icon" type="image/png" href="logo.jpg">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Programer</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="/Programer/css/index.css">
+  <style>
+    .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      user-select: none;
+    }
 
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+      }
+    }
 
+    .b-example-divider {
+      width: 100%;
+      height: 3rem;
+      background-color: rgba(0, 0, 0, .1);
+      border: solid rgba(0, 0, 0, .15);
+      border-width: 1px 0;
+      box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+    }
+
+    .b-example-vr {
+      flex-shrink: 0;
+      width: 1.5rem;
+      height: 100vh;
+    }
+
+    .bi {
+      vertical-align: -.125em;
+      fill: currentColor;
+    }
+
+    .nav-scroller {
+      position: relative;
+      z-index: 2;
+      height: 2.75rem;
+      overflow-y: hidden;
+    }
+
+    .nav-scroller .nav {
+      display: flex;
+      flex-wrap: nowrap;
+      padding-bottom: 1rem;
+      margin-top: -1px;
+      overflow-x: auto;
+      text-align: center;
+      white-space: nowrap;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .btn-bd-primary {
+      --bd-violet-bg: #712cf9;
+      --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
+
+      --bs-btn-font-weight: 600;
+      --bs-btn-color: var(--bs-white);
+      --bs-btn-bg: var(--bd-violet-bg);
+      --bs-btn-border-color: var(--bd-violet-bg);
+      --bs-btn-hover-color: var(--bs-white);
+      --bs-btn-hover-bg: #6528e0;
+      --bs-btn-hover-border-color: #6528e0;
+      --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+      --bs-btn-active-color: var(--bs-btn-hover-color);
+      --bs-btn-active-bg: #5a23c8;
+      --bs-btn-active-border-color: #5a23c8;
+    }
+
+    .bd-mode-toggle {
+      z-index: 1500;
+    }
+
+    .bd-mode-toggle .dropdown-menu .active .bi {
+      display: block !important;
+    }
+  </style>
 </head>
-
 <body>
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <header>
+    <nav class="navbar navbar-expand-md bg-dark sticky-top border-bottom" data-bs-theme="dark">
+      <div class="container">
         <a class="navbar-brand" href="#">
-            <img src="/Programer/logo.jpg" alt="Logo" width="30" height="24" class="d-inline-block align-text-top navbar-logo">
-            Progamer
-          </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação">
+          <img class="bi" width="24" height="24" src="img/programer_logo_white_transparent.png" alt="">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas" aria-controls="offcanvas" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav navbar-items">
-            <li class="nav-item active">
-              <a class="nav-link items-navbar" href="#">Feedback</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link items-navbar" href="#">Sobre Nós</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link items-navbar" href="#">Projeto</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link items-navbar" href="#">Contato</a>
-            </li>
-          </ul>
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvas" aria-labelledby="offcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasLabel">Programer</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <ul class="navbar-nav flex-grow-1 justify-content-between">
+              <li class="nav-item"><a class="nav-link" href="#">
+                <svg class="bi" width="24" height="24"><use xlink:href="#aperture"/></svg>
+              </a></li>
+              <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+              <li class="nav-item"><a class="nav-link" href="#">Material Do Jogo</a></li>
+              <li class="nav-item"><a class="nav-link" href="#">Jogar</a></li>
+              <li class="nav-item"><a class="nav-link" href="#sobre">Sobre</a></li>
+            </ul>
+          </div>
         </div>
-      </nav>
-    </header>
+      </div>
+    </nav>
+  </header>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
+  <main>
+    <div class="me-md-3 pt-3 px-3 pt-md-2 px-md-2 overflow-hidden">
+      <p class="lead">
+        Exemplo de texto descritivo
+A Carta de Pero Vaz de Caminha é um relato de viagem, sendo, portanto, um exemplo de descrição:
 
-<main>
-    <section class="body">
-        <h1 class="display-1">Introdução</h1>
-           <p class="lead">O objetivo desse site é incentivar o usuário a aprender a linguagem de programação python de maneira mais
-            divertida, dinâmica e simplificada. Tudo isso por meio de um simples e intuitivo minigame.</p>
-        <h1 class="display-1">O que é um algoritmo?</h1>
+"Também andavam, entre eles, quatro ou cinco mulheres moças, nuas como eles, que não pareciam mal. Entre elas andava uma com uma coxa, do joelho até o quadril, e a nádega, toda tinta daquela tintura preta; e o resto, tudo da sua própria cor. Outra trazia ambos os joelhos, com as curvas assim tintas, e também os colos dos pés; e suas vergonhas tão nuas e com tanta inocência descobertas, que nisso não havia nenhuma vergonha. Também andava aí outra mulher moça com um menino ou menina ao colo, atado com um pano (não sei de quê) aos peitos, de modo que apenas as perninhas lhe apareciam. Mas as pernas da mãe e o resto não traziam pano algum."
 
-            <p class="lead">Algoritmo é o próprio código que você vai criar, trata-se de uma receita ou lista de passos que devem ser
-            seguidos em ordem para concluir uma tarefa, no caso da programação, é uma sequência de comandos que o
-            programador digita para o computador interpretar e depois teretornar
-            um valor. Ex:</p>
-            <!-- Lista ordenada, onde os itens tem uma ordem especifica e possuem um número antes -->
-            <ol class="list-group list-group-numbered lista-ordenada">
-                <li class="list-group-item">Coloque a perna esquerda no chão.</li>
-                <li class="list-group-item">Mova a perna direita</li>
-                <li class="list-group-item">Coloque a perna direita ao lado da esquerda</li>
-                <li class="list-group-item">Repita isso mais duas vezes</li>
-              </ol>
-            <p class="lead">Pronto, agora o comando irá retornar na saída alguém caminhando.</p>
-        <h1 class="display-1">O que são dados e quais os seus tipos?</h1>
+Entenda tudo sobre as características desse tipo textual:
 
-            <p>Dados representam valores manipulados em um programa de computação e possuem tipos diferentes, alguns deles
-            são:</p>
-            <!-- Essa é uma lista não ordenada onde é marcada por pontos -->
-            <ul class="list-group list-group-flush lista-nao-ordenada">
-                <li class="list-group-item">int: Refere-se ao conjunto dos números inteiros.Ex: -1,0,1,2..</li>
-                <li class="list-group-item">float: Refere-se ao conjunto dos números reais.Ex:-1,-1.5,2.3, 5…</li>
-                <li class="list-group-item">str: Esse é o tipo de dado string ou texto.Ex: ”Frase”, “Palavra”....</li>
-                <li class="list-group-item">Booleanos: Representa valores lógicos de “sim” ou “não”, “True” ou “False”. Em python as condições devem começar com letra maiúscula.</li>
-              </ul>
-        <h1 class="display-1">Variáveis</h1>
-            <p class="lead">Variáveis são nomes que representam o local na memória onde os dados são guardados e podem ser posteriormente alterados.</p>
-        <h1 class="display-1">Funções do Python</h1>
+Texto descritivo
+Descrição
+Descrição objetiva e subjetiva
+3. Texto Dissertativo
+O texto dissertativo busca defender uma ideia e, logo, é baseado na argumentação e no desenvolvimento de um tema. Geralmente, os textos dissertativos-argumentativos, além de serem opinativos, buscam persuadir o leitor.
 
-            <p class="lead">Uma função é um bloco de código que pode ser chamado em outras partes do programa, recebem um valor personalizado(parâmetro) entre os parênteses e alguns já estão pré-programados, como o print() que permite exibir na tela o que estiver dentro dele. </p>
+Estrutura dos textos dissertativos
+A estrutura dos textos dissertativos é dividida em três partes fundamentais:
 
-        <h1 class="display-1">Primeiros Passos(Exemplos)</h1>
-            <p class="lead">Para fixar esse conteúdo antes de entrar em alguma fase do jogo observe o seguinte código e se pergunte o que ele faz:</p>
-            <img src="/Programer/imagens/geral/cod_menu.png" class="rounded mx-auto d-block imagens">
-            <p class="lead">Perceba uma coisa, não se utiliza acento na programação a não ser que seja dentro de uma string, isso porque
-            cada mínima alteração no código o computador entende como sendo um valor diferente, por exemplo,a variável
-            “var1” e “VAR1” em python são completamente diferentes e não necessariamente precisam estar interligadas.
-            Agora,você pode estar se perguntando o que esse código faz, caso não tenha entendido vou te explicar:
-            A variável chamada “variavel1” está guardando no computador o valor ‘string’ que por sua vez é um texto(ao
-            qual
-            deve ser delimitado entre aspas simples ou duplas). A segunda linha contém a função “print()”, onde o que
-            for
-            colocado nos parênteses será exibido, logo se a variável está dentro dessa função o valor armazenado será
-            exibido, ou seja, ‘string’ vai aparecer na sua tela.</p>
+Introdução: também chamada de tese, essa é uma pequena parte do texto que apresenta a ideia, o tema ou assunto principal que será dissertado.
+Desenvolvimento: também chamada de antítese (ou anti tese), é a maior parte do texto em que é apresentado os argumentos contra e a favor sobre o tema.
+Conclusão: também chamada de nova tese, essa parte sugere uma nova ideia, que pode ser uma solução sobre o tema exposto.
+Tipos de textos dissertativos
+Os textos dissertativos são classificados de duas maneiras:
 
-        <h1 class="display-1">Listas</h1>
-            <p class="lead">Uma lista é simplesmente uma variável capaz de armazenar vários valores dentro de si, de tipos de dados
-            diferentes e até mesmo outras listas, ex:</p>
-            <img src="/Programer/imagens/geral/cod_menu2.png" class="rounded mx-auto d-block imagens">
-        <h1 class="display-1">Bibliotecas</h1>
-            <p class="lead">Bibliotecas são um conjunto de módulos(variáveis, classes e funções), ou de forma mais leiga, códigos
-            prontos
-            que visam facilitar seu trabalho como programador. Para adicionar bibliotecas no seu código é necessário
-            utilizar a função “import”, ex:
-            import matplotlib.pyplot as plt
-            O comando “as” serve para nomear a biblioteca “matplotlib.pyplot” com um nome simples que será utilizado
-            para
-            chamar seus comandos futuramente.</p>
+Dissertativo-expositivo: foco na exposição de alguma ideia, fato, tema ou assunto. Nesse caso, não há a intenção de persuadir o leitor.
+Dissertativo-argumentativo: a persuasão é o principal ponto dessa categoria de textos dissertativos. Assim, o uso de argumentações e contra argumentações são fundamentais.
+Alguns exemplos de textos dissertativos
+Resenha
+Artigo
+Ensaio
+Monografia
+Editorial
+Exemplo de texto dissertativo
+O exemplo abaixo é um editorial da seção Tecnologia do jornal Correio braziliense.
 
-        <h1 class="display-1">Comentários</h1>
-        <p class="lead">Comentários não são códigos e não afetam os programas, na verdade eles servem para você programador se
-        guiar,para organização,explicação, etc. Aqui você o define simplesmente colocando “#”:
-        #Exemplo de comentário: Aqui esse código faz isso e aquilo.</p>
-        
-        <h1 class="display-1">Gráficos</h1>
-            <p class="lead">A linguagem python é a mais utilizada para criar gráficos, por isso este é um tópico importante. Uma das
-            bibliotecas existentes é a “matplotlib.pyplot”. Abaixo acompanha um exemplo com explicações em comentários:</p>
-            <!-- Aqui fica um código de exemplo -->
-            <img src="/Programer/imagens/geral/grafico_menu.png" class="rounded mx-auto d-block imagens">
-        <h1 class="display-1">Criando Funções</h1>
-           <p class="lead">Além das funções já dispostas pela linguagem você também pode criar suas próprias funções, para isso é preciso seguir alguns passos. Primeiro utilize "def" para indicar que será criado um bloco de código, depois insira o nome da função e entre parênteses acrescente os parâmetros(parâmetros são nada mais que valores que podem ser fornecidos à função quando ela é chamada,elas podem ter zero ou mais parâmetros). Depois será o corpo da função onde você coloca seu código que será executado quando a função for chamada. Por fim o palavra-chave "return" é usada para devolver um valor da função. Este é um passo opcional. Se uma função não contiver essa instrução, ela retornará implicitamente "None". Veja um exemplo de código para você entender:</p>
-            <img src="/Programer/imagens/geral/cod_menu3.png" class="rounded mx-auto d-block imagens">
-            <div class="botao">
-            <button type="button" class="btn btn-primary botoes" id="" onclick="goToLevel1()">Jogar</button>
-            </div>
-    </section>
-    </main>
+App criado por publicitário "paga" para usuário assistir a propagandas
+
+No app Curió, os usuários assistem a conteúdos publicitários de forma voluntária e ganham pontos para trocar por brindes
+
+Há dois anos, o aplicativo Curió veicula publicidade de uma forma diferente e inovadora. O empresário e criador do app, Jean Silva, 33 anos, observou que os meios tradicionais de divulgação publicitária não surtem o efeito desejado, porque o consumidor passou a ignorar as propagandas difundidas em quantidades exageradas nas redes sociais.
+
+"A nossa aposta é pagar pelo tempo do espectador. O usuário assistirá à propaganda de maneira voluntária e ganhará moedas (curiós) para trocar por prêmios na plataforma", explica Silva.
+
+O nome Curió teve inspiração tanto no pássaro brasileiro quanto na curiosidade inerente a todo ser humano. "O que nos motiva é poder fazer parte da vida de cada "curioso" que já abriu um sorriso e se emocionou no fim daquele filme e se sentiu valorizado por interagir com os nossos anunciantes."
+
+Pesquisas e vale-compras
+
+Além de assistir às propagandas para ganhar os curiós, o consumidor também pontua quando responde a pesquisas e adquire um vale-compra pelo app. De acordo com Jean Silva, nas plataformas digitais, os valores para veicular uma propaganda ficaram muito mais baixos, e o tempo de exposição, maior. Logo, quando o usuário ignora, mais propagandas são colocadas e, assim, se constrói um ciclo sem tanta lucratividade.
+
+Em uma pesquisa realizada pelos desenvolvedores do Curió, o resultado de efetividade das peças publicitárias é 10 vezes maior no app, em relação ao Instagram e YouTube.
+
+(Ana Clara Avendaño, Correio Braziliense 26/05/2020)
+
+Entenda mais sobre esse tipo de texto:
+
+Texto dissertativo
+Texto dissertativo-argumentativo
+Como fazer uma redação dissertativa
+Como fazer um bom texto dissertativo-argumentativo
+4. Texto Expositivo
+O texto expositivo pretende apresentar um tema a partir de recursos como a conceituação, a definição, a descrição, a comparação, a informação e enumeração. Dessa forma, o objetivo central do emissor é explanar, discutir e explicar sobre um determinado assunto.
+
+Tipos de textos expositivos
+Os textos expositivos são classificados em dois tipos:
+
+Texto informativo-expositivo: tem como objetivo a transmissão de informações, sem que haja juízo de valor.
+Texto expositivo-argumentativo: foca na exposição de tema com defesa de opinião.
+Alguns exemplos de textos expositivos
+Seminários
+Entrevistas
+Palestras
+Enciclopédia
+Verbete de dicionário
+Exemplo de texto expositivo
+Para entender melhor sobre esse tipo de texto, confira abaixo o verbete do dicionário online de português (Dicio) sobre a palavra disruptivo.
+
+Significado de Disruptivo
+
+adjetivo
+Que provoca ou pode causar disrupção; que acaba por interromper o seguimento normal de um processo; interruptivo, suspensivo.
+Que tem capacidade para romper ou alterar; que rompe.
+
+[Eletricidade] Que causa a restauração súbita de uma corrente elétrica, provocando faíscas e gastando a energia que estava acumulada.
+
+[Hidráulica] Que provoca uma alteração ao redor daquilo que obstrui o escoamento de fluidos.
+
+expressão
+      </p>
+    </div>
+    
+  </main>
+  <footer class="container py-3">
+    <div class="row">
+      <div class="col-3 col-md">
+        <img src="img/programer_logo_white_black.jpg" width="24" height="24" alt="">
+        <small class="d-block mb-3 text-body-secondary">&copy;2024</small>
+      </div>
+      <div class="col-3 col-md">
+        <h5>Redes Sociais</h5>
+        <ul class="list-unstyled text-small">
+          <li><a class="link-secondary text-decoration-none" href="#">instagram</a></li>
+          <li><a class="link-secondary text-decoration-none" href="#">X</a></li>
+        </ul>
+      </div>
+      <div class="col-3 col-md">
+        <h5>Referências</h5>
+        <ul class="list-unstyled text-small">
+          <li><a class="link-secondary text-decoration-none" href="#">Gustavo Guanabara</a></li>
+          <li><a class="link-secondary text-decoration-none" href="#">Bro Code</a></li>
+          <li><a class="link-secondary text-decoration-none" href="#">Fireship</a></li>
+          <li><a class="link-secondary text-decoration-none" href="#"></a></li>
+        </ul>
+      </div>
+      <div class="col-3 col-md">
+        <h5 href="" id="sobre">Sobre</h5>
+        <ul class="list-unstyled text-small">
+          <li><a class="link-secondary text-decoration-none" href="#">Equipe</a></li>
+          <li><a class="link-secondary text-decoration-none" href="#">Projeto</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
 </body>
-    <Script>
-        function goToLevel1() {
-            window.location.href = "nivel1.html";
-        }
-    </Script>
-
 </html>

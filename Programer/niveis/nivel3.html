@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programer-Nível 3</title>
+    <link rel="icon" type="image/png" href="logo.jpg">
+    <link rel="stylesheet" href="/Programer/css/niveis.css">
+    <link rel="stylesheet" href="/Programer/css/index.css">
+</head>
+
+<body>
+    <main>
+        <section id="game-board">
+            <img src="imagens/nivel3/cenario.png" alt="Cenário" id="camada1">
+        </section>
+
+        <section id="editor">
+            <article>
+                <h1>Abra a porta</h1>
+                <p>Para abrir passagem será necessário uma função que retorne os "dados" de segurança da porta nulos, ou seja, zerados.</p>
+            </article>
+
+            <section id="codigo">
+                <ol>
+                    <li>
+                        <p><span>dados = [12, 32, 21]</span></p>
+                    </li>
+                    <li>
+                        <p><span>def hackear(x):</span></p>
+                    </li>
+                    <li>
+                        <p><span><input type="text" id="primeiralinha" placeholder="retornar o valor"></span></p>
+                    </li>
+                    <li>
+                        <p><span><input type="text" id="quartalinha" placeholder="chame a função"></span></p>
+                    </li>
+                </ol>
+            </section>
+
+            <div id="botaoeditor">
+                <button onclick="verificar()" id="executar">Executar</button>
+                <button onclick="goToMenu()" id="menu">Voltar para o Menu</button>
+                <button onclick="goToMenu()" id="next_level" style="display:none;">Prosseguir</button><br>
+                <p id="mensagem"></p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <!-- Aqui pode incluir informações sobre o site ou os desenvolvedores -->
+    </footer>
+
+    <script>
+        function verificar() {
+            var respostaPrimeiraLinha = document.getElementById('primeiralinha').value.trim().toLowerCase().replace(/\s/g, '');
+            var respostaQuartaLinha = document.getElementById('quartalinha').value.trim().toLowerCase().replace(/\s/g, '');
+
+            var respostaCorretaPrimeiraLinha = "  return x * 0".toLowerCase().replace(/\s/g, '');
+            var respostaCorretaQuartaLinha = "hackear(dados)".toLowerCase().replace(/\s/g, '');
+
+            if (
+                respostaPrimeiraLinha === respostaCorretaPrimeiraLinha &&
+                respostaQuartaLinha === respostaCorretaQuartaLinha
+            ) {
+                document.getElementById('mensagem').innerHTML = 'Parabéns! Suas respostas estão corretas.';
+                document.getElementById('mensagem').style.color = 'green';
+                //Fazendo o botão prosseguir aparecer e o outro desaparecer
+                document.getElementById('next_level').style.display = 'inline';
+
+                //Fazendo a porta se abrir
+                var image = document.getElementById('camada1');
+                image.src = 'imagens/nivel3/cenario2.png';
+
+            } else {
+                document.getElementById('mensagem').innerHTML = 'Tente novamente. Suas respostas estão incorretas.';
+                var image = document.getElementById('camada1');
+                image.src = 'imagens/nivel3/cenario.png';
+                document.getElementById('mensagem').style.color = 'red';
+            }
+        }
+
+        function goToMenu() {
+            window.location.href = 'index.html';
+        }
+    </script>
+</body>
+
+</html>
